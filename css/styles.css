@@ -1,0 +1,66 @@
+"!"
+
+<head>
+
+<style>
+
+body{
+    background-color: biege;
+}
+h1 {
+color: violet;
+}
+p {
+  color: darkgray;
+}
+
+a:link {
+  color: purple;
+}
+
+a:visited {
+  color: pink;
+}
+body {
+  background-color: moccasin;
+}
+
+@media (width >= 30em) {
+  body {
+    background-color; darkgray;
+  }
+}
+background {
+    color: moccasin;
+}
+ html {
+                font-size: 16px;
+            }
+
+            .outer {
+                width: 400px;
+                height: 200px;
+                background-color: blue;
+                padding: 20px;
+                font-size: 2em; 
+            }
+
+            .inner {
+                width: 200px;
+                height: 150px; 
+                background-color: royalblue;
+                font-size: 2rem; 
+            }
+            body {
+                background: beige);
+
+            }
+  img {
+    width: 300px;
+    height: auto;
+  }            
+  
+</style>    
+</head>            
+
+
