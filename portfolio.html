@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Site</title>
+
+    <link rel="stylesheet" href="my_site.css">
+</head>
+
+<body>
+
+    <header>
+        <a class="home-button" href="index.html">Home</a>
+        <h1>My Site</h1>
+        <form class="search" action="https://www.google.com/search" method="get">
+            <input type="text" name="q" placeholder="Search...">
+            <button type="submit">Search</button>
+    
+        </form>
+    </header>
+
+
+    <!-- jeg prøver at finde ud af hvordan man får koden til at være i en boks, kan ikke helt finde ud af det-->
+    <!--jeg indsætter nogle andre projecter :)--> 
+
+    <main class="pages">
+
+        <h2>Portfolio</h2>
+            <section class="project">
+                <h3>Project 1</h3>
+                <img class="project-image" src="images/EasyArt.jpg" alt="A picture of my EasyArt page">
+            </section>
+
+            <section class="project">
+                <h3>Project 2</h3>
+                    <pre><code>grade:
+        public class Grade
+        {
+        private int grade;
+        private String course;
+
+        public static final int[] LEGAL_GRADES = {-3, 0, 2, 4, 7, 10, 12};
+
+        public Grade(int grade, String course)
+        {
+
+        boolean isLegalGrade;
+        if(!isLegalGrade(grade))
+        {
+            throw new IllegalArgumentException("this grade is an illegal grade: " + grade);
+        }
+
+        this.grade = grade;
+        this.course = course;
+        }
+
+        public int getGrade()
+        {
+        return grade;
+        }
+
+        public String getCourse()
+        {
+        return course;
+        }
+
+        @Override
+        public String toString()
+        {
+        return "course: " + course + ", greade: " + grade;
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass())
+        {
+            return false;
+        }
+        Grade other = (Grade) obj;
+        return grade == other.grade && course.equals(other.course);
+        }
+
+        public static boolean isLegalGrade(int grade) {
+        for (int legal : LEGAL_GRADES) {
+            if (legal == grade) {
+            return true;
+            }
+        }
+        return false;
+        }
+
+        }</code></pre>
+            </section>
+
+            <section class="project">
+                <h3>Project 3</h3>
+                        <pre><code>gradelist:
+        import java.util.ArrayList;
+
+        public class GradeList
+        {
+        private ArrayList<Grade> grades;
+
+        public GradeList()
+        {
+            this.grades = new ArrayList<>();
+        }
+
+        public int size()
+        {
+            return grades.size();
+        }
+
+        public void addGrade(Grade grade)
+        {
+            grades.add(grade);
+        }
+
+        public void addGrade(int index, Grade grade)
+        {
+            grades.add(index, grade);
+        }
+
+        public void removeGrade(int index)
+        {
+            grades.remove(index);
+        }
+
+        public Grade getGrade(int index)
+        {
+            return grades.get(index);
+        }
+
+        public int getMinimumGrade()
+        {
+            int min = grades.getFirst().getGrade();
+            for (Grade g : grades)
+            {
+            if (g.getGrade() < min)
+            {
+                min = g.getGrade();
+            }
+            }
+            return min;
+        }
+
+        public int getMaximumGrade()
+        {
+            int max = grades.getFirst().getGrade();
+            for (Grade g : grades)
+            {
+            if (g.getGrade() > max)
+            {
+                max = g.getGrade();
+            }
+            }
+            return max;
+        }
+
+        public double getAverageGrade()
+        {
+            int total = grades.getFirst().getGrade();
+            for (Grade g: grades)
+            {
+            total += g.getGrade();
+            }
+            return (double) total / grades.size();
+        }
+
+        @Override
+        public String toString()
+        {
+            String result = "";
+            for (Grade g : grades)
+            {
+            result += g + "\n";
+            }
+            return result;
+        }
+
+        @Override
+        public boolean equals(Object obj)
+        {
+            if (this == obj) return true;
+            if (obj == null || getClass() != obj.getClass()) return false;
+            GradeList other = (GradeList) obj;
+            return grades.equals(other.grades);
+        }
+        }</code></pre>
+            </section>
+
+            <section class="project">
+                <h3>Project 4</h3>
+                <pre><code>public class Grade
+    {
+    private int grade;
+    private String course;
+
+    public static final int[] LEGAL_GRADES = {-3, 0, 2, 4, 7, 10, 12};
+
+    public Grade(int grade, String course)
+    {
+
+        boolean isLegalGrade;
+        if(!isLegalGrade(grade))
+        {
+        throw new IllegalArgumentException("this grade is an illegal grade: " + grade);
+        }
+
+        this.grade = grade;
+        this.course = course;
+    }
+
+    public int getGrade()
+    {
+        return grade;
+    }
+
+    public String getCourse()
+    {
+        return course;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "course: " + course + ", greade: " + grade;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass())
+        {
+        return false;
+        }
+        Grade other = (Grade) obj;
+        return grade == other.grade && course.equals(other.course);
+    }
+
+    public static boolean isLegalGrade(int grade) {
+        for (int legal : LEGAL_GRADES) {
+        if (legal == grade) {
+            return true;
+        }
+        }
+        return false;
+    }
+
+    }
+    import java.util.ArrayList;
+
+    public class GradeList
+    {
+    private ArrayList&lt;Grade&gt; grades;
+
+    public GradeList()
+    {
+        this.grades = new ArrayList&lt;&gt;();
+    }
+
+    public int size()
+    {
+        return grades.size();
+    }
+
+    public void addGrade(Grade grade)
+    {
+        grades.add(grade);
+    }
+
+    public void addGrade(int index, Grade grade)
+    {
+        grades.add(index, grade);
+    }
+
+    public void removeGrade(int index)
+    {
+        grades.remove(index);
+    }
+
+    public Grade getGrade(int index)
+    {
+        return grades.get(index);
+    }
+
+    public int getMinimumGrade()
+    {
+        int min = grades.getFirst().getGrade();
+        for (Grade g : grades)
+        {
+        if (g.getGrade() &lt; min)
+        {
+            min = g.getGrade();
+        }
+        }
+        return min;
+    }
+
+    public int getMaximumGrade()
+    {
+        int max = grades.getFirst().getGrade();
+        for (Grade g : grades)
+        {
+        if (g.getGrade() > max)
+        {
+            max = g.getGrade();
+        }
+        }
+        return max;
+    }
+
+    public double getAverageGrade()
+    {
+        int total = grades.getFirst().getGrade();
+        for (Grade g: grades)
+        {
+        total += g.getGrade();
+        }
+        return (double) total / grades.size();
+    }
+
+    @Override
+    public String toString()
+    {
+        String result = "";
+        for (Grade g : grades)
+        {
+        result += g + "\n";
+        }
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        GradeList other = (GradeList) obj;
+        return grades.equals(other.grades);
+    }
+    }</code></pre>
+            </section>
+
+            <section class="project">
+                <h3>Project 5</h3>
+                    <pre><code>textfilegradelistpersistance:
+    import java.io.*;
+
+    public class TextFileGradeListPersistence implements GradeListPersistence
+    {
+
+    @Override public GradeList load(String fileName) throws PersistenceException
+    {
+        GradeList gradelist = new GradeList();
+        try (BufferedReader in = new BufferedReader(new FileReader(fileName)))
+        {
+        String line = in.readLine();
+        while (line != null)
+        {
+            String[] parts = line.split(";", 2);
+            String course = parts[0];
+            int gradevalue = Integer.parseInt(parts[1]);
+
+            Grade grade = new Grade(gradevalue,course);
+            gradelist.addGrade(grade);
+
+            line = in.readLine();
+        }
+        return gradelist;
+        }
+        catch (IOException | RuntimeException e)
+        {
+        throw new PersistenceException("Could not load notebook", e);
+        }
+
+    }
+
+    @Override public void save(String fileName, GradeList gradeList)
+        throws PersistenceException
+    {
+        try (PrintWriter out = new PrintWriter(fileName))
+        {
+        for (int i = 0; i < gradeList.size(); i++)
+        {
+            String course = gradeList.getGrade(i).getCourse();
+            int grade = gradeList.getGrade(i).getGrade();
+            out.println(course + ";" + grade);
+        }
+        }
+        catch (IOException e)
+        {
+        throw new PersistenceException("Could not save notebook", e);
+        }
+
+    }
+    }</code></pre>
+            </section>
+    </main>  
+
+
+
+
+
+</body>
+</html>
