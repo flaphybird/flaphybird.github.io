@@ -28,13 +28,14 @@
     <main class="pages">
 
         <h2>Portfolio</h2>
-            <section class="project">
-                <h3>Project 1</h3>
+        <div class="projects">
+            <details class="project">
+                <summary><h3>Project 1</h3></summary>
                 <img class="project-image" src="images/EasyArt.jpg" alt="A picture of my EasyArt page">
-            </section>
+            </details>
 
-            <section class="project">
-                <h3>Project 2</h3>
+            <details class="project">
+                <summary><h3>Project 2</h3></summary>
                     <pre><code>grade:
         public class Grade
         {
@@ -93,11 +94,11 @@
         }
 
         }</code></pre>
-            </section>
-
-            <section class="project">
-                <h3>Project 3</h3>
-                        <pre><code>gradelist:
+    </details>
+        
+            <details class="project">
+                <summary><h3>Project 3</h3></summary>
+                    <pre><code>gradelist:
         import java.util.ArrayList;
 
         public class GradeList
@@ -190,10 +191,11 @@
             return grades.equals(other.grades);
         }
         }</code></pre>
-            </section>
+    </details>
+    
 
-            <section class="project">
-                <h3>Project 4</h3>
+            <details class="project">
+                <summary><h3>Project 4</h3></summary>
                 <pre><code>public class Grade
     {
     private int grade;
@@ -343,10 +345,10 @@
         return grades.equals(other.grades);
     }
     }</code></pre>
-            </section>
-
-            <section class="project">
-                <h3>Project 5</h3>
+            </details>
+    
+            <details class="project">
+                <summary><h3>Project 5</h3></summary>
                     <pre><code>textfilegradelistpersistance:
     import java.io.*;
 
@@ -398,7 +400,8 @@
 
     }
     }</code></pre>
-            </section>
+            </details>
+        </div>
     </main>  
 
 
