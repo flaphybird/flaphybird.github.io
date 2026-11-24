@@ -132,15 +132,6 @@ header h1 {
     gap: 20px;
 }
 
-.home-link {
-    display: block;
-    background-color: honeydew;
-    padding: 20px;
-    border: 1px solid burlywood;
-    border-radius: 4px;
-    box-shadow: 0 4px 4px burlywood;
-}
-
 .home-link a {
     color: darkblue;
 }
