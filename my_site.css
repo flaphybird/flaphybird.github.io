@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -14,27 +14,33 @@ body {
 header {
     width: 100%;
     max-width: 730px;
-    height: 125px;
     margin: 0 auto 28px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+    padding: 20px;
     position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "title"
+        "search";
+    justify-items: center;
+    gap: 15px;
     background-color: bisque;
     box-shadow: 0 4px 4px burlywood;
+    
 }
 
 header h1 {
+    grid-area: title;
+    text-align: center;
     font-size: 30px;
-    font-weight: 400;    
+    font-weight: 400;
 }
 
 .home-button {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 10px;
+    left: 10px;
+    grid-area: home;
     padding: 5px 10px;
     font-size: 14px;
     border: 1px solid beige;
@@ -46,24 +52,23 @@ header h1 {
     font-family: 'Times New Roman', Times, serif;
 }
 
+/*flex*/
 .search {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    grid-area: search;
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
 .search input {
+    min-width: 0;
     padding: 5px;
     font-size: 14px;
-    border: 1px solid burlywood;
+    border: 1px solid beige;
     border-radius: 4px;
     background-color: bisque;
     font-family: 'Times New Roman', Times, serif;
-
-}   
+}
 
 .search button {
     padding: 5px 10px;
@@ -79,7 +84,7 @@ header h1 {
     width: 100%;
     max-width: 730px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 20px;
     background-color: bisque;
     box-shadow: 0 4px 4px burlywood;
 }
@@ -89,9 +94,77 @@ header h1 {
     margin: 20px 0 10px;
 }
 
-.pages .link {
-    margin-bottom: 20px;
-    padding: 0 20px 20px;
+/*flex*/
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 20px;
+}
+
+.home-links {
+    flex: 1;
+    width: auto;
+    min-width: 0;
+    height: 350px;
+    display: block;
+    background-color: beige;
+    padding: 20px;
+    border: 1px solid burlywood;
+    border-radius: 4px;
+    box-shadow: 0 4px 4px burlywood;
+}
+
+.side-photo {
+    width: 200px;
+    height: 350px;
+    object-fit: cover;
+    margin-top: 0;
+    flex-shrink: 0;
+    border-radius: 4px;
+    box-shadow: 0 4px 4px burlywood;
+}
+
+.link-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.home-link {
+    display: block;
+    background-color: honeydew;
+    padding: 20px;
+    border: 1px solid burlywood;
+    border-radius: 4px;
+    box-shadow: 0 4px 4px burlywood;
+}
+
+.home-link a {
+    color: darkblue;
+}
+
+.home-link a:hover {
+    color: black;
+}
+
+/*flex*/
+.about {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 20px 0;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 0;
+    background-color: honeydew;
+    padding: 20px;
+    border: 1px solid burlywood;
+    border-radius: 4px;
+    box-shadow: 0 4px 4px burlywood;
 }
 
 .portrait {
@@ -100,87 +173,127 @@ header h1 {
     flex-shrink: 0;
     margin-bottom: 20px;
     object-fit: cover;
+    border-radius: 4px;
     box-shadow: 0 4px 4px burlywood;
 }
 
-.about {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-    padding: 20px;
-}
-
+/*grid*/
 .gallery {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 20px;
-    flex-wrap: wrap;
+    padding: 20px 0;
 }
 
 .thumb {
-    height: 150px;
-    width: auto;
+    width: 100%;
+    height: 200px;
     border-radius: 4px;
     object-fit: contain;
 }
 
-.project-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
+/*grid*/
 .projects {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
-    padding: 20px;
+    padding: 20px 0;
+    align-items: start;
 }
 
 .project {
-    display: block;
-    gap: 20px;
-    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 0;
+    background-color: beige;
     box-shadow: 0 4px 4px burlywood;
     padding: 20px;
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-fit: contain;
 }
 
 .project h3 {
     font-weight: 400;
-    margin-bottom: 10px;
-}
-
-.project p {
-    margin-bottom: 10px;
 }
 
 .project pre {
-    background-color: bisque;
+    background-color: beige;
     padding: 10px;
     border-radius: 4px;
-    overflow-x: auto;
+    overflow: auto;
+    min-width: 0;
 }
 
-.home {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;
-    padding: 0 20px 20px;
+.project.featured {
+    grid-column: 1 / -1;
 }
 
-.side-photo {
-    width: 200px;
-    height: auto;
-    object-fit: cover;
-    margin-top: 20px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    box-shadow: 0 4px 4px burlywood;
-}
-
-@media (max-width: 600px){
-    body{
+/* media queries */
+/* Phone screen */
+@media (max-width: 600px) {
+    body {
         padding: 25px 15px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    .search input {
+        width: 100%;
+        max-width: 140px;
+    }
+
+    .home {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about {
+        flex-direction: column;
+        
+    }
+
+    .home-links {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+
+    .side-photo {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        object-fit: contain;
+        margin-top: 0;
+    }
+
+    .link-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Very small screen */
+@media (max-width: 380px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+    .projects {
+        grid-template-columns: 1fr;
     }
 }
 
